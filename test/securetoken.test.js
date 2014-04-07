@@ -9,10 +9,6 @@ var SecureToken = require('..');
 
 
 
-crypto.DEFAULT_ENCODING = 'binary'; // sigh
-
-
-
 var keys = [ {
     uuid: '8ea74e99-91d5-4207-9822-7096900b44c5',
     key: '499d7d5db79b25d9be22197d869b38bb8b2dbb5e86ba3565b4fbd542e1b1bd33',
