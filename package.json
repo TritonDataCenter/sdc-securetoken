@@ -4,15 +4,18 @@
   "version": "0.1.1",
   "homepage": "http://www.joyent.com",
   "private": true,
-  "engines" : { "node" : ">=0.10" },
+  "engines": {
+    "node": ">=0.10"
+  },
   "engineStrict": true,
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/joyent/sdc-securetoken.git"
+    "type": "git",
+    "url": "https://github.com/joyent/sdc-securetoken.git"
   },
   "main": "./lib/securetoken.js",
   "dependencies": {},
   "devDependencies": {
     "tap": "0.4.8"
-  }
+  },
+  "license": "MPL-2.0"
 }
