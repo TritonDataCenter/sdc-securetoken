@@ -10,14 +10,11 @@
 
 # sdc-securetoken
 
-Repository: <https://github.com/joyent/sdc-securetoken.git>
-Browsing: <https://mo.joyent.com/sdc-securetoken>
-Who: Marsell Kukuljevic, John Sonnenschein
-Docs: this README
-Tickets/bugs: <https://devhub.joyent.com/jira/browse/PUBAPI>
+This repository is part of the Joyent SmartDataCenter project (SDC).  For 
+contribution guidelines, issues, and general documentation, visit the main
+[SDC](http://github.com/joyent/sdc) project page.
 
-
-# Overview
+## Overview
 
 This repo provides a means of securely (encrypt-then-MAC) transferring data
 between services in the public. Data is encoded into a token, which is provided
@@ -71,20 +68,3 @@ Verify and decode a token:
     tokenizer.decrypt(tokenFromClient, function (err, privateData) {
         // check err, then use privateData as desired
     });
-
-
-# Testing
-
-When testing for the first time, run the following step:
-
-    git submodule update --init
-    npm install
-
-From then on, to lint, check style, and run tests, run:
-
-    make prepush
-
-Always ensure that the above passes before committing. However, if you'd
-rather just run tests during development:
-
-    make test

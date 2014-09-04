@@ -10,7 +10,7 @@
   "engineStrict": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/joyent/sdc-securetoken.git"
+    "url": "git+ssh://git@github.com:joyent/sdc-securetoken.git"
   },
   "main": "./lib/securetoken.js",
   "dependencies": {},
