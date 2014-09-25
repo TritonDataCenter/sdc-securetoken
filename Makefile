@@ -23,9 +23,11 @@ include ./tools/mk/Makefile.defs
 #
 
 .PHONY: all
-all:
-	$(NPM) install
+all node_modules/tap:
+	npm install
 
+test: | node_modules/tap
+	node test/securetoken.test.js
 
 
 include ./tools/mk/Makefile.deps
