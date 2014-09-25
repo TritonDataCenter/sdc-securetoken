@@ -8,20 +8,25 @@
 # Copyright (c) 2014, Joyent, Inc.
 #
 
-JSL = deps/javascriptlint/build/install/jsl
-JSS = deps/jsstyle/jsstyle
+JS_FILES	:= $(shell find lib test -name '*.js')
+JSL_CONF_NODE	 = tools/jsl.node.conf
+JSL_FILES_NODE	 = $(JS_FILES)
+JSSTYLE_FILES	 = $(JS_FILES)
+JSSTYLE_FLAGS	 = -f tools/jsstyle.conf
 
-.PHONY: prepush check test
 
-prepush: check test
+include ./tools/mk/Makefile.defs
 
-check: $(JSL)
-	$(JSL) --conf=tools/jsl.node.conf lib/*.js test/*.js
-	$(JSS) -f tools/jsstyle.conf lib/*.js test/*.js
 
-test:
-	node test/securetoken.test.js
+#
+# Repo-specific targets
+#
 
-$(JSL):
-	make -C deps/javascriptlint install
+.PHONY: all
+all:
+	$(NPM) install
 
+
+
+include ./tools/mk/Makefile.deps
+include ./tools/mk/Makefile.targ
